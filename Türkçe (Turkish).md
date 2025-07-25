@@ -4,6 +4,7 @@
 
 Node.js, JavaScript’i tarayıcı dışında çalıştıran bir ortamdır. 2009’da, Chorme v8 motoru üzerine inşa edildi. Node.js büyük bir topluluğa sahiptir. Node.js sayesinde sadece JS kullanılarak full-stack uygulamalar geliştirilebilir.
 
+---
 ## Tarayıcı JS’i ile Node.js Arasındaki Farklar Nelerdir?
 
 | DOM | No DOM | DOM ile ilgili JS özellikleri Node.js’de bulunmaz. Çünkü Node.js tarayıcı ortamında çalışmadığından bir DOM’a sahip değildir. |
@@ -13,6 +14,7 @@ Node.js, JavaScript’i tarayıcı dışında çalıştıran bir ortamdır. 2009
 | Fragmentation | Versions | Tarayıcı uygulamalarında kullanıcı tarayıcısının uygulamadaki uyumluluğunu test etmek geliştiricinin sorumluluğudur. Fakat Node.js’de böyle bir durum yoktur, çünkü Node.js versiyon sistemi ile çalışır ve bir versiyonda geliştirme tamamlandığında uygulamanın versiyon sebepli bozulma ihtimali yoktur. |
 | ES6 modules | Common.js | Tarayıcıda modüller opsiyoneldir. Node.js’de ise modüller yüklü gelir. |
 
+---
 ## Node.js ile Çalışma Metodları
 
 Node.js ile çalışmanın iki yolu vardır. Biri REPL, diğeri CLI. REPL komut satırında basit bir Node.js ortamı oluşturarak girilen basit Node.js komutlarını çalıştırır, sadece çok temel ve test amaçlı kullanım içindir. Node.js CLI’i ise bir Node komut sistemidir ve terminal üzerinden girilen komutlarla program yönetimi yapar. 
@@ -21,6 +23,7 @@ Node.js ile çalışmanın iki yolu vardır. Biri REPL, diğeri CLI. REPL komut 
 
 REPL, tarayıcı konsoluna oldukça benzeridir. Tarayıcı konsolunda ciddi bir program geliştirilmez, sadece çok temel ve genellikle test amaçlı işlemler yapılır. 
 
+---
 ## Globals
 
 Node.js’de window objesi olmamasına rağmen programın her yerinde erişilebilecek globaller vardır. Bunlardan bazıları şu şekildedir:
@@ -32,6 +35,7 @@ Node.js’de window objesi olmamasına rağmen programın her yerinde erişilebi
 | module | Mevcut modül (dosya) hakkında bilgi |
 | process | Programın çalıştırıldığı ortam hakkında bilgil verir. Program gerçek bir uygulamada kullanılmak üzere bir sunucuya deploy edildiğinde o sunucunun veya servis sağlayıcısının programı çalıştırdığı ortam ile iligili bilgi verir. |
 
+---
 ## Modüller
 
 Node.js CLI kullanırken bir dosya çalıştırılıyor ve bu şekilde program aktif oluyor. Peki bu, bütün yazılımı sadece bir dosya içine mi yazacağımız anlamına geliyor? Tabii ki hayır, Node.js bir dosyayı çalıştırıyor olduğundan bütün yazılım bir dosyada toplanmalı ancak bu bütün yazılımın o dosyaya yazılacağı anlamına da gelmez. 
@@ -87,6 +91,7 @@ require('./dosya1')
 4
 ```
 
+---
 ## Built-in Modules
 
 Node.js ile birlikte gelen bazı hazır modüller bulunmaktadır. Bunların önde gelenleri şu şekildedir: OS (Operation system), PATH, FS (Filesystem) ve HTTP. 
@@ -223,6 +228,7 @@ server.listen(5000)
 
 Bu örnekte olduğu gibi HTTPM modülü ile oluştuurlan server, ‘req’ ve ’res’ olarak iki parametreye sahip. Req parametresi ‘request’ anlamına gelip kullanıcıdan gelen isteğin verisini bulunduran çok büyük bir objedir. Res ise ‘response’ anlamına gelip sunucudan kullnıcıya döndürülen yanıtı ifade eder.
 
+---
 ## NPM
 
 NPM bir paket/modül mağazasıdır ve Node.js indirildiğinde onunla birlikte gelir. Bu mağza geliştiricilerin kendi yazdıkları kodları/modülleri insanlarla paylaşmasına imkân verir.
@@ -310,6 +316,7 @@ Bu konuda bir diğer önemli araç da ‘npx’dir. npx sayesinde global olarak 
 
 package-lock.json dosyası pacakge.json dosyasındaki gerekliliklerin versiyon numaralarının ve bu gerekliliklerin de kullandığı diğer paketlerin versiyon numaralarını içeren detaylı bir kayıt dosyasıdır. Bu dosya projenin daha kararlı ve verimli şekilde kurulmasını sağlar.
 
+---
 ## Olay Döngüsü (Event Loop)
 
 Event loop mantığını anlamak için öncelikle senkronize ve asenkronize çalışma mantığını anlamak gerekir. JavaScript dili ‘tek çekirdekli’ (‘single-threded’) bir dilidir. Yani aynı anda sadece bir işlemi yapabilir. Örneğin zaman alan iki fonksiyon olduğunda ikisini de kendi başına aynı anda işleyemez.
@@ -454,6 +461,7 @@ async function readAndWriteFiles() {
 
 Görüldüğü üzere ikinci kullanım birinci callback kullanımından çok daha temiz ve okunabilir.
 
+---
 ## Olaylar (Events)
 
 Node.js olay tabanlı (event-driven) çalışır. Yani genelde bir olay senaryosu belirlenir, olay gerçekleştiğinde çalıştırılacak kod hazırlanır ve olay dinlemeye alınarak tetiklenme durumunda daha önce belirlenen kod çalıştırılır.
@@ -492,6 +500,7 @@ server.on('request', (req, res) => {
 server.listen(5000)
 ```
 
+---
 ## Streams (Akışlar)
 
 Node.js’de akışlar (streams) veri işlemleri açıısndan son derece önemli bir yere sahiptir. Streamslerin amacı veri okuma, yazma ve değiştirme işlemlerini ‘optimize ve verimli’ şekilde gerçekleştirmektir. 
@@ -597,6 +606,7 @@ http.createServer((req, res) => {
 }).listen(3000);
 ```
 
+---
 ## HTTP Mesajları
 
 Kullanıcı cihazı (client) ile sunucu (server) arasındaki iletişim HTTP mesajları ile sağlanır. Bu mesajlar çeşittir; client tarafından gönderilen ‘talep (request)’ mesajları ve server tarafından gönderilen ‘yanıt (response)’ mesajları. 
@@ -681,6 +691,7 @@ Connection: keep-alive
 }
 ```
 
+---
 ## Basit HTTP Sunucusu Örneği
 
 Aşağıda request ve response objeleri ve çeşitli metodları kullanılarak basit bir HTTP sunucusu oluşturulmuştur.
@@ -793,6 +804,7 @@ const server = http.createServer((req, res) => {
 
 Ancak bu işlem içerisinde onlarca, yüzlerce dosya barındıran projeler için verimsiz ve sürdürülemez. Bu sorunun çözümü ise Express.js. 
 
+---
 ## Express.js
 
 Express.js bir Node.js kütüphanesidir (framework). Bu framework sayesinde orijinal (vanilla) Node.js’de yapılması çetrefilli olan dosya gönderimi gibi birçok işlem çok daha kolay bir şekilde yapılabilmekte. 
@@ -866,6 +878,7 @@ app.listen('5000', () => {
 })
 ```
 
+---
 ## Sayfa Parametreleri (Route Params)
 
 Route Params, request edilem URL ile sunucuya veri aktararak bu veriye göre response alınmasını sağlayan bir yapıdır.
@@ -932,6 +945,7 @@ app.get('app/products/:productId', (req, res) => {
 app.listen('5000')
 ```
 
+---
 ## Sorgu Metni (Query String)
 
 Route params ile basit bir sorgu olarak spesifik bir sayfayı sorgulama işlemi yapılabileceği gibi ‘query stringler’ ile de daha gelişmiş sorgulamalar yapılabilir. Yine aynı mantıkla URL ile bazı sorgu parametreleri gönderilir ve sunucu bu parametrelerle veriyi filtreleyip istenilen cevabı gönderir.
@@ -982,6 +996,7 @@ app.listen(5000, () => {
 })
 ```
 
+---
 ## Orta Katman (Middleware)
 
 Middleware, request mesajları ile response mesajları arasında bulunan işlem katmanına verilen isimdir. Server’a bir request geldiğinde response mesajı göndermeden önce bu katmanda belli işlemler yapılır ve bu aşamanın ardından response mesajı gönderilir.
@@ -1065,6 +1080,7 @@ app.use(express.static('./public')) // Dosya yollarını belirlemek için Expres
 app.use(morgan('tiny') // Loglama için NPM'den ile indirilmiştir.
 ```
 
+---
 ## Örnek Metod Kullanımları
 
 Aşağıda farklı request metodlarının basit bir örneği bulunmaktadır:
@@ -1152,6 +1168,7 @@ app.listen(5000, () => {
 })
 ```
 
+---
 ## Yönlendirici (Router) Yapısı
 
 Klasik Express.js uygulamalarında olduğu gibi bütün istekleri doğrudan app objesi üzerinde gerçekleştirmek kod karmaşasına yol açmakta ve okunabilirliği düşürmektedir. Bu sorunu çözmek için her farklı route için bir dosya oluşturarak ve özel bir Router yapısı kullanabiliriz.
