@@ -4,6 +4,7 @@
 
 Node.js is an environment that runs JavaScript outside the browser. In 2009, it was built on the Chorme v8 engine. Node.js has a huge community. Thanks to Node.js, full-stack applications can be developed using only JS.
 
+---
 ## What are the Differences Between Browser JS and Node.js?
 
 | DOM | No DOM | JS features related to the DOM are not available in Node.js. Because Node.js does not run in a browser environment, it does not have a DOM. |
@@ -13,6 +14,7 @@ Node.js is an environment that runs JavaScript outside the browser. In 2009, it 
 | Fragmentation | Versions | In browser applications, it is the developer's responsibility to test the compatibility of the user's browser with the application. However, this is not the case in Node.js, because Node.js works with a versioning system and there is no possibility of the application breaking due to versioning when development is completed on a version. |
 | ES6 modules | Common.js | In the browser, modules are optional. In Node.js, modules are installed. |
 
+---
 ## Working Methods with Node.js
 
 There are two ways to work with Node.js. One is REPL and the other is CLI. REPL creates a simple Node.js environment on the command line and executes simple Node.js commands, it is only for very basic and testing purposes. The Node.js CLI is a Node command system and manages the program with commands entered through the terminal. 
@@ -21,6 +23,7 @@ For example, running 'node' on the terminal will open REPL, but running 'node my
 
 REPL is very similar to a browser console. No serious programs are developed in the browser console, only very basic and often testing operations. 
 
+---
 ## Globals
 
 Although there is no window object in Node.js, there are globals that can be accessed anywhere in the program. Some of these are as follows:
@@ -32,6 +35,7 @@ Although there is no window object in Node.js, there are globals that can be acc
 | module | Information about the current module (file) |
 | process | Provides information about the environment in which the program is running. When the program is deployed to a server for use in a real application, it provides information about the environment in which that server or service provider is running the program. |
 
+---
 ## Modules
 
 When using the Node.js CLI, a file is executed and this is how the program is activated. Does this mean that we just write all the software in one file? Of course not, since Node.js runs a file, all the software should be collected in one file, but this does not mean that all the software will be written in that file. 
@@ -87,6 +91,7 @@ require('./file1')
 4
 ```
 
+---
 ## Built-in Modules
 
 There are some ready-made modules that come with Node.js. The most prominent of these are as follows: OS (Operating system), PATH, FS (Filesystem) and HTTP. 
@@ -227,6 +232,7 @@ server.listen(5000)
 
 As in this example, the server created with the HTTPM module has two parameters, 'req' and 'res'. Req stands for 'request' and is a very large object that holds the data of the request from the user. Res stands for 'response' and refers to the response returned from the server to the user.
 
+---
 ## NPM
 
 NPM is a package/module repository and comes with the Node.js download. This repository allows developers to share their code/modules with people.
@@ -315,6 +321,7 @@ Another important tool in this regard is 'npx'. npx allows us to call modules gl
 
 The package-lock.json file is a detailed log file that contains the version numbers of the requirements in the pacakge.json file and the version numbers of other packages used by these requirements. This file allows the project to be set up in a more stable and efficient way.
 
+---
 ## Event Loop
 
 To understand the event loop logic, it is first necessary to understand the synchronous and asynchronous logic. JavaScript is a 'single-core' ('single-threded') language. This means that it can only perform one operation at a time. For example, if there are two time-consuming functions, it cannot process both of them at the same time on its own.
@@ -458,6 +465,7 @@ async function readAndWriteFiles() {
 
 As you can see, the second use is much cleaner and more readable than the first callback.
 
+---
 ## Events
 
 Node.js is event-driven. In other words, an event scenario is usually defined, the code to be executed when the event occurs is prepared, and the previously defined code is executed when the event is triggered by listening to the event.
@@ -496,6 +504,7 @@ server.on('request', (req, res) => {
 server.listen(5000)
 ```
 
+---
 ## Streams
 
 In Node.js, streams have a very important place in terms of data operations. The purpose of streams is to read, write and manipulate data in an 'optimized and efficient' way. 
@@ -601,6 +610,7 @@ http.createServer((req, res) => {
 }).listen(3000);
 ```
 
+---
 ## HTTP Messages
 
 Communication between the user device (client) and the server (server) is achieved through HTTP messages. These messages are of two types; 'request' messages sent by the client and 'response' messages sent by the server. 
@@ -685,6 +695,7 @@ Connection: keep-alive
 }
 ```
 
+---
 ## Simple HTTP Server Example
 
 The following is a simple HTTP server using request and response objects and various methods.
@@ -797,6 +808,7 @@ const server = http.createServer((req, res) => {
 
 However, this process is inefficient and unsustainable for projects that contain tens or hundreds of files. The solution to this problem is Express.js. 
 
+---
 ## Express.js
 
 Express.js is a Node.js library (framework). Thanks to this framework, many operations that are complicated to do in the original (vanilla) Node.js, such as sending files, can be done much more easily. 
@@ -871,6 +883,7 @@ app.listen('5000', () => {
 })
 ```
 
+---
 ## Route Params
 
 Route Params is a structure that transfers data to the server with the requested URL and receives a response according to this data.
@@ -940,6 +953,7 @@ app.listen('5000')
 
 ```
 
+---
 ## Query String
 
 Route params can be used to query a specific page as a simple query or more advanced queries can be made with 'query strings'. With the same logic, some query parameters are sent with the URL and the server filters the data with these parameters and sends the desired answer.
@@ -990,6 +1004,7 @@ app.listen(5000, () => {
 })
 ```
 
+---
 ## Middleware
 
 Middleware is the name given to the processing layer between request messages and response messages. When a request comes to the server, certain operations are performed in this layer before sending a response message and then the response message is sent.
@@ -1073,6 +1088,7 @@ app.use(express.static('./public')) // Provided by Express to define file paths.
 app.use(morgan('tiny')) // Installed from NPM for logging.
 ```
 
+---
 ## Example Method Uses
 
 Below is a simple example of the different request methods:
@@ -1160,6 +1176,7 @@ app.listen(5000, () => {
 })
 ```
 
+---
 ## Router Structure
 
 As in classic Express.js applications, performing all requests directly on the app object causes code clutter and reduces readability. To solve this problem, we can create a file for each different route and use a custom Router structure.
